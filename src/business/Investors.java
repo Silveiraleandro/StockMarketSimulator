@@ -16,7 +16,7 @@ public class Investors {
     private Investors(BuilderInvestors buildInv){
 
         this.id = buildInv.id;
-        this.budget = buildInv.ramdomBudget();
+        this.budget = buildInv.randomBudget();
 
     }
     /*
@@ -56,7 +56,7 @@ public class Investors {
             /*
         generates ramdon prices for shares
          */
-        public double ramdomBudget(){
+        public double randomBudget(){
 
             Random r = new Random();
             int low = 500;
