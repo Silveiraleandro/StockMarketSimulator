@@ -8,7 +8,7 @@ public class Companies {
     /*
        encapsulated attributes of the class
         */
-    private RandomIdFacade id;
+    private String id;
     private double share;
     private double sharePrice;
 
@@ -25,7 +25,7 @@ public class Companies {
     /*
         Getters and setters
          */
-    public RandomIdFacade getId() {
+    public String getId() {
         return id;
     }
 
@@ -49,14 +49,14 @@ public class Companies {
      */
     public static class BuilderCompany {
 
-        private RandomIdFacade id;
+        private String id;
         private double share;
         private double sharePrice;
 
         /*
       creates the objects builder
        */
-        public BuilderCompany(RandomIdFacade id, double share, double sharePrice) {
+        public BuilderCompany(String id, double share, double sharePrice) {
 
             this.id = id;
             this.share = share;
@@ -85,6 +85,13 @@ public class Companies {
             int sharePrices = r.nextInt(high-low) + low;
 
             return sharePrices;
+        }
+        /*
+        double up the share price every time a share is sold
+       */
+        public void sellShares(int share, int sharePrice ){
+
+
         }
         /*
         setting and returning an instance of the class from the builder
