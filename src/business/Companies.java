@@ -1,12 +1,14 @@
 package business;
 
+import random.id.RandomIdFacade;
+
 import java.util.Random;
 
 public class Companies {
     /*
        encapsulated attributes of the class
         */
-    private String id;
+    private RandomIdFacade id;
     private double share;
     private double sharePrice;
 
@@ -23,7 +25,7 @@ public class Companies {
     /*
         Getters and setters
          */
-    public String getId() {
+    public RandomIdFacade getId() {
         return id;
     }
 
@@ -47,14 +49,14 @@ public class Companies {
      */
     public static class BuilderCompany {
 
-        private String id;
+        private RandomIdFacade id;
         private double share;
         private double sharePrice;
 
         /*
       creates the objects builder
        */
-        public BuilderCompany(String id, double share, double sharePrice) {
+        public BuilderCompany(RandomIdFacade id, double share, double sharePrice) {
 
             this.id = id;
             this.share = share;
@@ -73,7 +75,7 @@ public class Companies {
             return shares;
         }
         /*
-        generates ramdon prices for shares
+        generates random prices for shares
          */
         public double randomSharePrice(){
 
