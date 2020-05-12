@@ -56,11 +56,11 @@ public class Companies {
         /*
       creates the objects builder
        */
-        public BuilderCompany(String id, double share, double sharePrice) {
+        public BuilderCompany(String id) {
 
             this.id = id;
-            this.share = share;
-            this.sharePrice = sharePrice;
+            this.share = randomShares();
+            this.sharePrice = randomSharePrice();
         }
 
         /*
@@ -101,13 +101,14 @@ public class Companies {
         public String toString() {
             return "BuilderCompany{" +
                     "id='" + id + '\'' +
-                    ", share=" + share + '\n' +
+                    ", share=" + share +
                     ", sharePrice=" + sharePrice +
                     '}';
         }
+
         /*
-                setting and returning an instance of the class from the builder
-                 */
+                        setting and returning an instance of the class from the builder
+                         */
         public Companies build() {
             return new Companies(this);
         }

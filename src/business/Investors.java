@@ -43,10 +43,10 @@ public class Investors {
         /*
        creates the objects builder
         */
-        public BuilderInvestors(String id, double budget, int numberOfShares){
+        public BuilderInvestors(String id, int numberOfShares){
 
             this.id = id;
-            this.budget = budget;
+            this.budget = randomBudget();
             this.numberOfShares = numberOfShares;
         }
 
@@ -54,7 +54,7 @@ public class Investors {
     setting and returning an instance of the class from the builder
      */
             /*
-        generates ramdon prices for shares
+        generates random prices for shares
          */
         public double randomBudget(){
 

@@ -22,7 +22,7 @@ public class Simulator {
     public static List<Companies> factoryOf100Companies(){
         allCompanies = new ArrayList<>();
         for(int i = 0; i < 100; i ++){
-            allCompanies.add(new Companies.BuilderCompany(RandomIdFacade.generateId(RandomIdFacade.IdFacade.COMPANY),10, 20).build());
+            allCompanies.add(new Companies.BuilderCompany(RandomIdFacade.generateId(RandomIdFacade.IdFacade.COMPANY)).build());
         }
         for (Companies com : allCompanies){
             System.out.println(com);}
@@ -34,7 +34,7 @@ public class Simulator {
     public static List<Investors> factoryOf100Investors() {
             allInvestors = new ArrayList<>();
             for (int i = 0; i < 100; i++) {
-                allInvestors.add(new Investors.BuilderInvestors(RandomIdFacade.generateId(RandomIdFacade.IdFacade.INVESTOR), 10, 20).build());
+                allInvestors.add(new Investors.BuilderInvestors(RandomIdFacade.generateId(RandomIdFacade.IdFacade.INVESTOR), 10).build());
             }
 
             for (Investors inv : allInvestors) {
