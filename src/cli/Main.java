@@ -6,7 +6,7 @@ import random.id.RandomIdFacade;
 public class Main {
     public static void main(String[] args){
         RandomIdFacade facade = new RandomIdFacade();
-        Companies c = new Companies.BuilderCompany(facade.),10, 20).build();
+        Companies c = new Companies.BuilderCompany(RandomIdFacade.generateId(COMPANY)),10, 20).build();
         System.out.println(c);
     }
 }
