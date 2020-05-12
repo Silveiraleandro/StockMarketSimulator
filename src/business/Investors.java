@@ -73,9 +73,21 @@ public class Investors {
             numberOfShares = numberOfShares +1;
             return numberOfShares;
         }
+
+    /*
+    To String method to print the actual values in the terminal
+     */
+        @Override
+        public String toString() {
+            return "BuilderInvestors{" +
+                    "id='" + id + '\'' + '\n' +
+                    ", numberOfShares=" + numberOfShares +
+                    ", budget=" + budget +
+                    '}';
+        }
         /*
-               setting and returning an instance of the class from the builder
-                */
+             setting and returning an instance of the class from the builder
+              */
         public Investors build(){
             return new Investors(this);
         }

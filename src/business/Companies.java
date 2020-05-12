@@ -94,9 +94,20 @@ public class Companies {
 
         }
         /*
-        setting and returning an instance of the class from the builder
+        To String method to print the actual values in the terminal
          */
 
+        @Override
+        public String toString() {
+            return "BuilderCompany{" +
+                    "id='" + id + '\'' +
+                    ", share=" + share + '\n' +
+                    ", sharePrice=" + sharePrice +
+                    '}';
+        }
+        /*
+                setting and returning an instance of the class from the builder
+                 */
         public Companies build() {
             return new Companies(this);
         }

@@ -12,7 +12,7 @@ defining the elements of the enum
  */
     public static String generateId(IdFacade idType){
 
-        IdGenerator idG = null;
+        IdGenerator idG = new IdGenerator();
         String uniqueId = null;
 
         switch (idType) {
