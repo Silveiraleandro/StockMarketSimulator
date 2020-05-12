@@ -12,23 +12,27 @@ public class Simulator {
     private static List<Companies>allCompanies;
     private static List<Investors>allInvestors;
 
+    public Simulator(){
+        factoryOf100Companies();
+        factoryOf100Investors();
+    }
     /*
     creating 100 companies and saving them inside an array list applying the Factory design
      */
-    public static List<Companies> factoryOf100Instances(){
+    public static List<Companies> factoryOf100Companies(){
         allCompanies = new ArrayList<>();
         for(int i = 0; i < 100; i ++){
-            allCompanies.add(new Companies.BuilderCompany(RandomIdFacade.generateId(COMPANY),10, 20).build());
+            allCompanies.add(new Companies.BuilderCompany(RandomIdFacade.generateId(RandomIdFacade.IdFacade.COMPANY),10, 20).build());
         }
         return allCompanies;
     }
     /*
     creating 100 investors and saving them inside an array list applying the Factory design
      */
-    public static List<Investors> factoryOf100Instances() {
+    public static List<Investors> factoryOf100Investors() {
         allInvestors = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            allInvestors.add(new Companies.BuilderCompany(RandomIdFacade.generateId(INVESTORS), 10, 20).build());
+            allCompanies.add(new Companies.BuilderCompany(RandomIdFacade.generateId(RandomIdFacade.IdFacade.INVESTOR),10, 20).build());
         }
         return allInvestors;
     }
