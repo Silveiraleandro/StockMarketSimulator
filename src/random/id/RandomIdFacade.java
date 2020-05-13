@@ -8,11 +8,12 @@ defining the elements of the enum
         COMPANY, INVESTOR;
     }
 /*
-
+receives a type of IdFacade, gets an instance of IdGenerator and
+gives an uniqueId to this instance.
  */
     public static String generateId(IdFacade idType){
 
-        IdGenerator idG = new IdGenerator();
+        IdGenerator idG = IdGenerator.getInstance();
         String uniqueId = null;
 
         switch (idType) {

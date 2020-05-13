@@ -20,8 +20,21 @@ public class Investors {
 
     }
     /*
-        Getters and Setters
-         */
+   To String method to print the actual values in the terminal
+    */
+
+    @Override
+    public String toString() {
+        return "Investors{" +
+                "id='" + id + '\'' +
+                ", numberOfShares=" + numberOfShares +
+                ", budget=" + budget +
+                '}';
+    }
+
+    /*
+            Getters and Setters
+             */
     public String getId() {
         return id;
     }
@@ -74,17 +87,7 @@ public class Investors {
             return numberOfShares;
         }
 
-    /*
-    To String method to print the actual values in the terminal
-     */
-        @Override
-        public String toString() {
-            return "BuilderInvestors{" +
-                    "id='" + id + '\'' + '\n' +
-                    ", numberOfShares=" + numberOfShares +
-                    ", budget=" + budget +
-                    '}';
-        }
+
         /*
              setting and returning an instance of the class from the builder
               */

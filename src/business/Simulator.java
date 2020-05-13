@@ -25,7 +25,7 @@ public class Simulator {
             allCompanies.add(new Companies.BuilderCompany(RandomIdFacade.generateId(RandomIdFacade.IdFacade.COMPANY)).build());
         }
         for (Companies com : allCompanies){
-            System.out.println(com);}
+            System.out.println(com.toString());}
         return allCompanies;
     }
     /*
@@ -38,7 +38,7 @@ public class Simulator {
             }
 
             for (Investors inv : allInvestors) {
-                System.out.println(inv);}
+                System.out.println(inv.toString());}
                 return allInvestors;
             }
 

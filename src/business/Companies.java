@@ -22,9 +22,22 @@ public class Companies {
         this.sharePrice = builderComp.randomSharePrice();
 
     }
-    /*
-        Getters and setters
+     /*
+        To String method to print the actual values in the terminal
          */
+
+    @Override
+    public String toString() {
+        return "Companies{" +
+                "id='" + id + '\'' +
+                ", share=" + share +
+                ", sharePrice=" + sharePrice +
+                '}';
+    }
+
+    /*
+            Getters and setters
+             */
     public String getId() {
         return id;
     }
@@ -61,6 +74,7 @@ public class Companies {
             this.id = id;
             this.share = randomShares();
             this.sharePrice = randomSharePrice();
+
         }
 
         /*
@@ -93,22 +107,11 @@ public class Companies {
 
 
         }
-        /*
-        To String method to print the actual values in the terminal
-         */
 
-        @Override
-        public String toString() {
-            return "BuilderCompany{" +
-                    "id='" + id + '\'' +
-                    ", share=" + share +
-                    ", sharePrice=" + sharePrice +
-                    '}';
-        }
 
         /*
-                        setting and returning an instance of the class from the builder
-                         */
+                                setting and returning an instance of the class from the builder
+                                 */
         public Companies build() {
             return new Companies(this);
         }
