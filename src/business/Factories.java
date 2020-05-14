@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Simulator {
+public class Factories {
 
     private static List<Companies>allCompanies;
     private static List<Investors>allInvestors;
 
-    public Simulator(){
+    public Factories(){
         factoryOf100Companies();
         factoryOf100Investors();
     }
@@ -24,8 +24,7 @@ public class Simulator {
         for(int i = 0; i < 100; i ++){
             allCompanies.add(new Companies.BuilderCompany(RandomIdFacade.generateId(RandomIdFacade.IdFacade.COMPANY)).build());
         }
-        for (Companies com : allCompanies){
-            System.out.println(com.toString());}
+
         return allCompanies;
     }
     /*
@@ -34,11 +33,9 @@ public class Simulator {
     public static List<Investors> factoryOf100Investors() {
             allInvestors = new ArrayList<>();
             for (int i = 0; i < 100; i++) {
-                allInvestors.add(new Investors.BuilderInvestors(RandomIdFacade.generateId(RandomIdFacade.IdFacade.INVESTOR), 10).build());
+                allInvestors.add(new Investors.BuilderInvestors(RandomIdFacade.generateId(RandomIdFacade.IdFacade.INVESTOR), 0).build());
             }
 
-            for (Investors inv : allInvestors) {
-                System.out.println(inv.toString());}
                 return allInvestors;
             }
 

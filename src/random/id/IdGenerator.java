@@ -29,7 +29,7 @@ public class IdGenerator {
         */
     public String uniqueCompId(){
 
-        String id = "inv" + Integer.toString(companyCount);
+        String id = "comp" + Integer.toString(companyCount);
         this.companyCount++;
         return id;
     }

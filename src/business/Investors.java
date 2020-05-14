@@ -1,5 +1,6 @@
 package business;
 
+import market.ObserverMarket;
 import java.util.Random;
 
 public class Investors {
@@ -16,8 +17,24 @@ public class Investors {
     private Investors(BuilderInvestors buildInv){
 
         this.id = buildInv.id;
-        this.budget = buildInv.randomBudget();
+        this.budget = buildInv.generateRandomBudget();
 
+    }
+    /*
+        adding one to the number of shares for every time a share
+        is bought and returning this number
+         */
+    public Boolean buyShares(Companies company) {
+        if (budget <= company.getSharePrice() || company.getSharePrice() != 0) {
+            budget = budget - company.getSharePrice();
+            numberOfShares = numberOfShares + 1;
+            company.sellShares();
+
+            ObserverMarket.transactionCompleted();
+            return true;
+        } else {
+            return false;
+        }
     }
     /*
    To String method to print the actual values in the terminal
@@ -59,7 +76,7 @@ public class Investors {
         public BuilderInvestors(String id, int numberOfShares){
 
             this.id = id;
-            this.budget = randomBudget();
+            this.budget = generateRandomBudget();
             this.numberOfShares = numberOfShares;
         }
 
@@ -69,24 +86,15 @@ public class Investors {
             /*
         generates random prices for shares
          */
-        public double randomBudget(){
+        public double generateRandomBudget(){
 
             Random r = new Random();
-            int low = 500;
-            int high = 1000;
+            int low = 1000;
+            int high = 10000;
             int budget = r.nextInt(high-low + 1) + low;
 
             return budget;
         }
-        /*
-        adding one to the number of shares for every time a share
-        is bought and returning this number
-         */
-        public int buyShares(){
-            numberOfShares = numberOfShares +1;
-            return numberOfShares;
-        }
-
 
         /*
              setting and returning an instance of the class from the builder

@@ -1,10 +1,13 @@
 package cli;
 
 
-import business.Simulator;
+import business.Companies;
+import business.Factories;
+import business.Investors;
+import random.id.RandomIdFacade;
 
 public class Main {
-    public static void main(String[] args){
-        new Simulator();
+    public static void main(String[] args) {
+        new Factories();
     }
 }

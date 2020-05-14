@@ -20,6 +20,13 @@ public class Companies {
         this.id = builderComp.id;
         this.share = builderComp.randomShares();
         this.sharePrice = builderComp.randomSharePrice();
+    }
+    /*
+      subtracting 1 every time a share is sold
+     */
+    public void sellShares(){
+
+            share = share - 1;
 
     }
      /*
@@ -94,24 +101,16 @@ public class Companies {
         public double randomSharePrice(){
 
             Random r = new Random();
-            int low = 500;
-            int high = 1000;
+            int low = 10;
+            int high = 100;
             int sharePrices = r.nextInt(high-low) + low;
 
             return sharePrices;
         }
-        /*
-        double up the share price every time a share is sold
-       */
-        public void sellShares(int share, int sharePrice ){
-
-
-        }
-
 
         /*
-                                setting and returning an instance of the class from the builder
-                                 */
+        setting and returning an instance of the class from the builder
+         */
         public Companies build() {
             return new Companies(this);
         }
