@@ -25,12 +25,13 @@ public class Investors {
         is bought and returning this number
          */
     public Boolean buyShares(Companies company) {
+
         if (budget <= company.getSharePrice() || company.getSharePrice() != 0) {
             budget = budget - company.getSharePrice();
             numberOfShares = numberOfShares + 1;
             company.sellShares();
 
-            ObserverMarket.transactionCompleted();
+            ObserverMarket.transactionCompleted( investor, company);
             return true;
         } else {
             return false;
