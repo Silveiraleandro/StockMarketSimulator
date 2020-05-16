@@ -1,6 +1,7 @@
 package cli;
 
 import business.Factories;
+import market.Trades;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -65,19 +66,17 @@ public class User {
                 viewHighestCapital();
                 break;
             case 2:
-                searchCountryByCode();
+                viewLowestCapital();
                 break;
             case 3:
-                searchCountryByName();
+                viewInvestorWithMoreShares();
                 break;
             case 4:
-                createCountry();
+                viewInvestorWithLessShares();
                 break;
             case 5:
                 System.out.println("Thank you for using the system");
                 System.exit(0);
-                //closing the connection with the database
-                DbConnect.getInstance().close();
                 break;
         }
         userMenu();
@@ -86,4 +85,14 @@ public class User {
     public void viewHighestCapital(){
 
     }
+    public void viewLowestCapital(){
+
+    }
+    public void viewInvestorWithMoreShares(){
+
+    }
+    public void viewInvestorWithLessShares(){
+
+    }
+
 }

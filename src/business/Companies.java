@@ -1,7 +1,5 @@
 package business;
 
-import random.id.RandomIdFacade;
-
 import java.util.Random;
 
 public class Companies {
@@ -16,35 +14,38 @@ public class Companies {
     /*Defining a constructor that have the object builder bringing
        all the attributes that the Country has
         */
-    private Companies(BuilderCompany builderComp){
+    private Companies(BuilderCompany builderComp) {
 
         this.id = builderComp.id;
-        this.share = builderComp.randomShares();
-        this.sharePrice = builderComp.randomSharePrice();
+        this.share = builderComp.generateRandomShares();
+        this.sharePrice = builderComp.generateRandomSharePrice();
         this.allSoldShares = builderComp.allSoldShares;
     }
+
     /*
       subtracting 1 every time a share is sold
      */
-    public void sellShares(){
+    public void sellShares() {
 
-            share = share - 1;
+        share = share - 1;
 
     }
+
     /*
     increment the number of all shares already sold and reset the value after 10 shares were sold
      */
-    public void shareSold(){
+    public void shareSold() {
         allSoldShares = allSoldShares + 1;
-        if(allSoldShares == 10){
+        if (allSoldShares == 10) {
             this.sharePrice = sharePrice * 2;
             allSoldShares = 0;
         }
     }
+
     /*
     this method drops down the shares values for the companies which did not sell 10 shares
      */
-    public void dropValue(){
+    public void dropValue() {
         sharePrice = sharePrice * 0.98;
     }
      /*
@@ -83,6 +84,7 @@ public class Companies {
     public void setSharePrice(double sharePrice) {
         this.sharePrice = sharePrice;
     }
+
     /*
     this method is the one in charge of creating all instances of the Company Class
      */
@@ -99,8 +101,8 @@ public class Companies {
         public BuilderCompany(String id) {
 
             this.id = id;
-            this.share = randomShares();
-            this.sharePrice = randomSharePrice();
+            this.share = generateRandomShares();
+            this.sharePrice = generateRandomSharePrice();
             this.allSoldShares = allSoldShares;
 
         }
@@ -108,23 +110,24 @@ public class Companies {
         /*
         generates random Shares
          */
-        public double randomShares(){
+        public double generateRandomShares() {
             Random r = new Random();
             int low = 500;
             int high = 1000;
-            int shares = r.nextInt(high-low) + low;
+            int shares = r.nextInt(high - low) + low;
 
             return shares;
         }
+
         /*
         generates random prices for shares
          */
-        public double randomSharePrice(){
+        public double generateRandomSharePrice() {
 
             Random r = new Random();
             int low = 10;
             int high = 100;
-            int sharePrices = r.nextInt(high-low) + low;
+            int sharePrices = r.nextInt(high - low) + low;
 
             return sharePrices;
         }

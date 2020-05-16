@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01434382-03b2-4528-954b-8679f40193a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/market/Trades.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSimulator/business/Companies.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSimulator/business/Companies.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSimulator/business/Investors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSimulator/business/Investors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSimulator/random/id/IdGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSimulator/random/id/IdGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSimulator/random/id/RandomIdFacade$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSimulator/random/id/RandomIdFacade$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSimulator/random/id/RandomIdFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSimulator/random/id/RandomIdFacade.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/business/Companies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/Companies.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/business/Factories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/Factories.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/business/Investors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/Investors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/market/ObserverMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/market/ObserverMarket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/market/Trades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/market/Trades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/random/id/IdGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/random/id/IdGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/random/id/RandomIdFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/random/id/RandomIdFacade.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

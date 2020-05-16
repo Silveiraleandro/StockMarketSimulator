@@ -1,9 +1,7 @@
 package random.id;
 
-import java.util.Random;
-
 public class IdGenerator {
-//Global variables used to create ids to company and investors
+    //Global variables used to create ids to company and investors
     private int companyCount = 1;
     private int investorCount = 1;
     //instance of the singleton class
@@ -12,9 +10,10 @@ public class IdGenerator {
     /*private constructor necessary to create a singleton class
    in order to avoid the same id being given to the objs created
      */
-    private IdGenerator(){
+    private IdGenerator() {
 
     }
+
     /*
         This method provides access to the instance of the IdGenerator singleton class
          */
@@ -24,10 +23,11 @@ public class IdGenerator {
         }
         return instance;
     }
+
     /*
        creates a unique id within the range of 100. for company objs
         */
-    public String uniqueCompId(){
+    public String uniqueCompId() {
 
         String id = "comp" + Integer.toString(companyCount);
         this.companyCount++;
@@ -37,7 +37,7 @@ public class IdGenerator {
     /*
        creates a unique id within the range of 100. for investors objs
         */
-    public String uniqueInvId(){
+    public String uniqueInvId() {
 
         String id = "inv" + Integer.toString(investorCount);
         this.investorCount++;
