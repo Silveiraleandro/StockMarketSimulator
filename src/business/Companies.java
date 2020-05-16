@@ -11,6 +11,7 @@ public class Companies {
     private String id;
     private double share;
     private double sharePrice;
+    private double allSoldShares = 0;
 
     /*Defining a constructor that have the object builder bringing
        all the attributes that the Country has
@@ -20,6 +21,7 @@ public class Companies {
         this.id = builderComp.id;
         this.share = builderComp.randomShares();
         this.sharePrice = builderComp.randomSharePrice();
+        this.allSoldShares = builderComp.allSoldShares;
     }
     /*
       subtracting 1 every time a share is sold
@@ -28,6 +30,22 @@ public class Companies {
 
             share = share - 1;
 
+    }
+    /*
+    increment the number of all shares already sold and reset the value after 10 shares were sold
+     */
+    public void shareSold(){
+        allSoldShares = allSoldShares + 1;
+        if(allSoldShares == 10){
+            this.sharePrice = sharePrice * 2;
+            allSoldShares = 0;
+        }
+    }
+    /*
+    this method drops down the shares values for the companies which did not sell 10 shares
+     */
+    public void dropValue(){
+        sharePrice = sharePrice * 0.98;
     }
      /*
         To String method to print the actual values in the terminal
@@ -39,6 +57,7 @@ public class Companies {
                 "id='" + id + '\'' +
                 ", share=" + share +
                 ", sharePrice=" + sharePrice +
+                ", allSoldShares=" + allSoldShares +
                 '}';
     }
 
@@ -72,6 +91,7 @@ public class Companies {
         private String id;
         private double share;
         private double sharePrice;
+        private double allSoldShares;
 
         /*
       creates the objects builder
@@ -81,6 +101,7 @@ public class Companies {
             this.id = id;
             this.share = randomShares();
             this.sharePrice = randomSharePrice();
+            this.allSoldShares = allSoldShares;
 
         }
 

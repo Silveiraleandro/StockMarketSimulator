@@ -30,8 +30,8 @@ public class Investors {
             budget = budget - company.getSharePrice();
             numberOfShares = numberOfShares + 1;
             company.sellShares();
-
-            ObserverMarket.transactionCompleted( investor, company);
+            company.shareSold();
+            ObserverMarket.transactionCompleted(company);
             return true;
         } else {
             return false;

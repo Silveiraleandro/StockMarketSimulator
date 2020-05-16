@@ -2,46 +2,43 @@ package market;
 
 import business.Companies;
 import business.Factories;
-import business.Investors;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class ObserverMarket {
-    double totalSoldShare = 0;
+
+    private static double totalSoldShare = 0;
+    private static List<Companies>companiesWithSoldShares;
 
 /*
-this method increments 1 to the totalSoldShares every time a investor
-buys a share from a company and returns the totalSoldShares figure
+this method increments 1 to the totalSoldShares, populates an array with
+companies that have made transactions. call the method update to the companies
+that have performed more than 10 transactions and set the counter to 0
  */
+    public static void transactionCompleted(Companies comp){
+        companiesWithSoldShares = new ArrayList<>();
 
-    public double transactionCompleted(Investors investor,Companies company){
-        if (investor.buyShares(company) == true) {
-            totalSoldShare = totalSoldShare + 1;
-            if (totalSoldShare == 10){
-                updateCompanyShares(???? , company);
-            }
+        totalSoldShare = totalSoldShare + 1;
+        companiesWithSoldShares.add(comp);
+        if(totalSoldShare == 10){
+            totalSoldShare = 0;
+            updateShareValue(comp);
+
         }
-        return totalSoldShare;
+
     }
     /*
-    this method increments in 10 X the price of the shares of the companies that have sold
-    10 or more shares in total
+    This method checks if there are companies which sold more than 10 shares inside the array of 100 companies
+    and call the method that drops their value in 2%
      */
+    public static Companies updateShareValue(Companies comp) {
+        if (!Factories.getAllCompanies().contains(companiesWithSoldShares.contains(comp))) {
 
-    public Companies updateCompanyShares(Factories fac, Companies company) {
-        double doubleSharePrice = company.getSharePrice() * 2;
-        for (company:fac.factoryOf100Companies()) {
-            company.setSharePrice(doubleSharePrice);
+            comp.dropValue();
         }
-        if(company.getShare()==0){
-            double reducedShareValue = company.getSharePrice() * 0.98;
-            company.setShare(reducedShareValue);
-        }
-        totalSoldShare = 0;
+    return comp;
 
-        return  company;
     }
 
 }
