@@ -77,6 +77,10 @@ public class Companies {
         this.share = share;
     }
 
+    public double getAllSoldShares() {
+        return allSoldShares;
+    }
+
     public double getSharePrice() {
         return sharePrice;
     }

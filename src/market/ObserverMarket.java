@@ -12,11 +12,12 @@ public class ObserverMarket {
     private static double totalSoldShare = 0;
     private static List<Companies> companiesWithSoldShares;
 
+
     /*
-    this method increments 1 to the totalSoldShares, populates an array with
-    companies that have made transactions. call the method update to the companies
-    that have performed more than 10 transactions and set the counter to 0
-     */
+        this method increments 1 to the totalSoldShares, populates an array with
+        companies that have made transactions. call the method update to the companies
+        that have performed more than 10 transactions and set the counter to 0
+         */
     public static void transactionCompleted(Companies comp) {
         companiesWithSoldShares = new ArrayList<>();
 
@@ -39,6 +40,12 @@ public class ObserverMarket {
         }
         return comp;
 
+    }
+    /*
+    GETTER
+     */
+    public static List<Companies> getCompaniesWithSoldShares() {
+        return companiesWithSoldShares;
     }
 
 }

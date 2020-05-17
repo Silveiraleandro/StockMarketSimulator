@@ -1,16 +1,23 @@
 package cli;
 
+import business.Companies;
 import business.Factories;
+import business.Investors;
 import market.Trades;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 public class User {
-    public User() {
+    private static List<Companies> allCompanies;
+    private static List<Investors> allInvestors;
 
-        userMenu();
+    public User() {
+        this.allCompanies = Factories.getAllCompanies();
+        this.allInvestors = Factories.getAllInvestors();
+
     }
 
     /*
@@ -60,13 +67,12 @@ public class User {
     this method displays the internalMenu
      */
     public void internalMenu(Integer option) {
-         Factories fac = new Factories();
         switch (option) {
             case 1:
-                viewHighestCapital();
+                viewHighestCapitalCompany();
                 break;
             case 2:
-                viewLowestCapital();
+                viewLowestCapitalCompany();
                 break;
             case 3:
                 viewInvestorWithMoreShares();
@@ -82,10 +88,15 @@ public class User {
         userMenu();
     }
 
-    public void viewHighestCapital(){
+    public void viewHighestCapitalCompany(){
+       double companyHighestCap = 0;
+        for(Companies company : allCompanies){
+            companyHighestCap = company.getSharePrice();
+            System.out.println(companyHighestCap);
 
+        }
     }
-    public void viewLowestCapital(){
+    public void viewLowestCapitalCompany(){
 
     }
     public void viewInvestorWithMoreShares(){

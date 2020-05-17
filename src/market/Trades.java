@@ -3,6 +3,7 @@ package market;
 import business.Companies;
 import business.Factories;
 import business.Investors;
+import cli.User;
 
 import java.util.List;
 import java.util.Random;
@@ -10,12 +11,13 @@ import java.util.Random;
 
 public class Trades {
 
-    private static List<Companies> allCompanies;
-    private static List<Investors> allInvestors;
+    private List<Companies> allCompanies;
+    private List<Investors> allInvestors;
 
     public Trades() {
-        this.allCompanies = Factories.getAllCompanies();
         this.allInvestors = Factories.getAllInvestors();
+        this.allCompanies = Factories.getAllCompanies();
+
     }
 
     /*
@@ -26,15 +28,15 @@ public class Trades {
     public void tradingDay() {
 
         Random randomGenerator = new Random();
+
         for (Investors inv : allInvestors) {
             Companies comp = allCompanies.get(randomGenerator.nextInt(100));
             inv.buyShares(comp);
             comp.sellShares();
-
             ObserverMarket.transactionCompleted(comp);
             System.out.println(comp);
-        }
 
+        }
 
     }
 }
