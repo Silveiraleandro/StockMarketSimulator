@@ -3,11 +3,10 @@ package cli;
 import business.Companies;
 import business.Factories;
 import business.Investors;
-import market.Trades;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -26,7 +25,6 @@ public class User {
     private String userReader() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String input = null;
-
 
 
         try {
@@ -88,22 +86,84 @@ public class User {
         userMenu();
     }
 
-    public void viewHighestCapitalCompany(){
-       double companyHighestCap = 0;
-        for(Companies company : allCompanies){
-            companyHighestCap = company.getSharePrice();
-            System.out.println(companyHighestCap);
+    public void viewHighestCapitalCompany() {
+        double companyHighestCap = 0;
+
+        List<Companies>companiesWithHighestCapital = new ArrayList<>();
+
+        for(Companies comp:Factories.factoryOf100Companies()){
+            if(comp.getShare() * comp.getSharePrice()>companyHighestCap) {
+                companyHighestCap = comp.getShare() * comp.getSharePrice();
+            }
+
+            for(Companies compa:Factories.factoryOf100Companies()){
+                if(compa.getShare() * compa.getSharePrice() == companyHighestCap){
+                    companiesWithHighestCapital.add(compa);
+
+                    System.out.println(companiesWithHighestCapital);
+                }
+            }
+
+        }
+
+    }
+
+    public void viewLowestCapitalCompany() {
+        double companyLowestCap = 0;
+
+        List<Companies>companiesWithLowestCapital = new ArrayList<>();
+
+        for(Companies comp:Factories.factoryOf100Companies()){
+            if(comp.getShare() * comp.getSharePrice()<companyLowestCap) {
+                companyLowestCap = comp.getShare() * comp.getSharePrice();
+            }
+            for(Companies compa:Factories.factoryOf100Companies()){
+                if(compa.getShare() * compa.getSharePrice() == companyLowestCap){
+                    companiesWithLowestCapital.add(compa);
+
+                    System.out.println(companiesWithLowestCapital);
+                }
+            }
 
         }
     }
-    public void viewLowestCapitalCompany(){
 
+    public void viewInvestorWithMoreShares() {
+        double investorHighestCap = 0;
+
+        List<Investors>investorsWithHighestCapital = new ArrayList<>();
+
+        for(Investors inv:Factories.factoryOf100Investors()){
+            if(inv.getBudget()>investorHighestCap) {
+                investorHighestCap = inv.getBudget();
+            }
+            for(Investors inves:Factories.factoryOf100Investors()){
+                if(inves.getBudget()== investorHighestCap){
+                    investorsWithHighestCapital.add(inves);
+
+                    System.out.println(investorsWithHighestCapital);
+                }
+            }
+
+        }
     }
-    public void viewInvestorWithMoreShares(){
 
-    }
-    public void viewInvestorWithLessShares(){
+    public void viewInvestorWithLessShares() {
+        List<Investors>investorsWithLessCapital = new ArrayList<>();
 
+        for(Investors inv:Factories.factoryOf100Investors()){
+            if(inv.getBudget()>investorLessCap) {
+                investorLessCap = inv.getBudget();
+            }
+            for(Investors inves:Factories.factoryOf100Investors()){
+                if(inves.getBudget()== investorLessCap){
+                    investorsWithLessCapital.add(inves);
+
+                    System.out.println(investorsWithLessCapital);
+                }
+            }
+
+        }
     }
 
 }

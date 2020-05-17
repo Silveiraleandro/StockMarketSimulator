@@ -13,6 +13,7 @@ public class Trades {
 
     private List<Companies> allCompanies;
     private List<Investors> allInvestors;
+    private User user = new User();
 
     public Trades() {
         this.allInvestors = Factories.getAllInvestors();
@@ -28,13 +29,13 @@ public class Trades {
     public void tradingDay() {
 
         Random randomGenerator = new Random();
-
         for (Investors inv : allInvestors) {
             Companies comp = allCompanies.get(randomGenerator.nextInt(100));
             inv.buyShares(comp);
             comp.sellShares();
             ObserverMarket.transactionCompleted(comp);
-            System.out.println(comp);
+
+            user.userMenu();
 
         }
 

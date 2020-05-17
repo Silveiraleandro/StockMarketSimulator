@@ -2,7 +2,6 @@ package market;
 
 import business.Companies;
 import business.Factories;
-
 import java.util.ArrayList;
 import java.util.List;
 

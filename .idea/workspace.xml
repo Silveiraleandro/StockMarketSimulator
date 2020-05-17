@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="01434382-03b2-4528-954b-8679f40193a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/Companies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/Companies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/Factories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/Factories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/market/ObserverMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/market/ObserverMarket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/market/Trades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/market/Trades.java" afterDir="false" />
@@ -96,39 +93,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/market/Trades.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/market/Trades.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/business/Factories.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/business/Factories.java</url>
-          <line>38</line>
+          <line>32</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/business/Factories.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/business/Factories.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/cli/Main.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
